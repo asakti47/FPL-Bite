@@ -5,14 +5,16 @@ import './Fixture.css'
 const Fixture = ({ homeTeam, awayTeam, homeStats, awayStats }) => {
     return (
         <div className="fixture">
-            <div className="team home-team">
-                <img src={teamLogos[homeTeam]} alt={`${homeTeam} logo`} className="team-logo" />
-                <span>{homeTeam}</span>
-            </div>
-            <div className="vs">vs</div>
-            <div className="team away-team">
-                <img src={teamLogos[awayTeam]} alt={`${awayTeam} logo`} className="team-logo" />
-                <span>{awayTeam}</span>
+            <div className="fixture-teams">
+                <div className="team home-team">
+                    <img src={teamLogos[homeTeam]} alt={`${homeTeam} logo`} className="team-logo" />
+                    <span>{homeTeam}</span>
+                </div>
+                <span className="vs">vs</span>
+                <div className="team away-team">
+                    <span>{awayTeam}</span>
+                    <img src={teamLogos[awayTeam]} alt={`${awayTeam} logo`} className="team-logo" />
+                </div>
             </div>
             <div className="fixture-stats">
                 <div className="team-stats home-stats">
