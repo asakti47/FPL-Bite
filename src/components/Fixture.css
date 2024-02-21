@@ -1,75 +1,57 @@
-/* Fixture Component Styling */
 .fixture {
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 80%; /* Adjust based on your design preference */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
-    background-color: #f9f9f9; /* Light background color */
+    width: 90%; /* Adjust based on overall layout needs */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+    max-width: 1200px; /* Ensures fixtures are not too wide */
 }
 
-.fixture-teams {
+.team-stats, .team-logo, .vs, .team-name {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-bottom: 20px; /* Space between teams and stats */
-}
-
-.team {
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
-}
-
-.home-team {
-    justify-content: flex-start;
-}
-
-.away-team {
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-}
-
-.team-logo {
-    width: 40px; /* Adjust logo size as needed */
-    height: 40px; /* Maintain aspect ratio */
-    margin: 0 10px;
-    object-fit: contain; /* Keep logos from being distorted */
-}
-
-.vs {
-    font-size: 1.5em; /* Slightly larger text for 'vs' */
-    color: #666; /* Darker text color for contrast */
-    margin: 0 20px;
-}
-
-/* Styling for displaying match statistics below each team */
-.fixture-stats {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
 }
 
 .team-stats {
+    width: 100px; /* Fixed width for stats to ensure alignment */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    background-color: #fff; /* Stats background */
-    border-radius: 5px; /* Rounded corners for stats boxes */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Consistent with fixture shadow */
-    width: 45%; /* Adjust the width as necessary to fit stats */
+    text-align: center; /* Center-align the stats text */
+    margin-right: 10px; /* Space between stats and team name/logo */
 }
 
 .stat-box {
-    margin: 5px 0; /* Spacing between xG and xGA stats */
-    padding: 5px 10px;
-    background-color: #e3e3e3; /* Slightly darker for the stat background */
-    border-radius: 4px; /* Rounded corners for individual stats */
-    width: auto; /* Auto width based on content */
+    width: 100%; /* Full width of the stats container */
+    padding: 4px;
+    background-color: #e3e3e3;
+    border-radius: 4px;
+    margin: 2px 0; /* Small gap between stats */
+    display: flex;
+    justify-content: center;
+}
+
+.team-logo {
+    width: 50px; /* Fixed width and height to prevent distortion */
+    height: 50px;
+    object-fit: contain; /* Keeps logo aspect ratio */
+}
+
+.team-name {
+    margin: 0 15px; /* Adjust spacing as needed */
+    white-space: nowrap; /* Prevents team names from wrapping */
+    font-weight: bold;
+}
+
+.vs {
+    margin: 0 20px; /* Fixed margin for consistent alignment */
+    flex-shrink: 0; /* Prevents the 'vs' from shrinking */
+    width: 50px; /* Fixed width to help align 'vs' across fixtures */
+    text-align: center; /* Ensures 'vs' is always centered in its box */
+    font-weight: bold;
 }
