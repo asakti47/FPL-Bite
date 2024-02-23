@@ -22,9 +22,13 @@ def get_fixtures():
             home_team.Squad AS home_team,
             home_team.xG AS home_xG,
             home_team.xGA AS home_xGA,
+            home_team.xGRank as home_xGRank,
+            home_team.xGARank as home_xGARank,
             away_team.Squad AS away_team,
             away_team.xG AS away_xG,
-            away_team.xGA AS away_xGA
+            away_team.xGA AS away_xGA,
+            away_team.xGRank as away_xGRank,
+            away_team.xGARank as away_xGARank
         FROM 
             fixtures f
         JOIN 

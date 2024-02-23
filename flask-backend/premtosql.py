@@ -95,12 +95,30 @@ def fetch_curr_gw():
     df['away_id'] = away_id
     return df
 
+def rank_team_stats(df):
+    """
+    Adds xG and xGA rankings to the DataFrame.
+    """
+    # Calculate rankings for xG and xGA
+    df['xGRank'] = df['xG'].rank(method='min', ascending=False)  # Higher xG is better, so rank in descending order
+    df['xGARank'] = df['xGA'].rank(method='min', ascending=True)  # Lower xGA is better, so rank in ascending order
+    
+    # Convert rankings to integers
+    # Note: The ranking might produce floats, so ensure there are no NaN values before conversion to avoid errors
+    df['xGRank'] = df['xGRank'].fillna(0).astype(int)
+    df['xGARank'] = df['xGARank'].fillna(0).astype(int)
+    
+    return df
+
 def fetch_and_process_data():
     try:
         # Your data fetching and processing code goes here
         # Example: Fetching Premier League stats from FBRef
         team_stats_df = fetch_fbref_team_stats()
         fixtures_df = fetch_curr_gw()
+
+        # Add the rankings for xG and xGA into the DataFrame
+        team_stats_df = rank_team_stats(team_stats_df)
 
         # After processing the data
         db_file = 'football_data.db'

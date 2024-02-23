@@ -7,8 +7,8 @@ const Fixture = ({ homeTeam, awayTeam, homeStats, awayStats }) => {
         <div className="fixture">
             {/* Home Team Stats */}
             <div className="team-stats home-stats">
-                <div className="stat-box">xG: {homeStats.xG}</div>
-                <div className="stat-box">xGA: {homeStats.xGA}</div>
+                <div className="stat-box">[{homeStats.xGRank}] xG: {homeStats.xG}</div>
+                <div className="stat-box">[{homeStats.xGARank}] xGA: {homeStats.xGA}</div>
             </div>
             
             {/* Home Team Name and Logo */}
@@ -24,8 +24,8 @@ const Fixture = ({ homeTeam, awayTeam, homeStats, awayStats }) => {
             
             {/* Away Team Stats */}
             <div className="team-stats away-stats">
-                <div className="stat-box">xG: {awayStats.xG}</div>
-                <div className="stat-box">xGA: {awayStats.xGA}</div>
+                <div className="stat-box">[{awayStats.xGRank}] xG: {awayStats.xG}</div>
+                <div className="stat-box">[{awayStats.xGARank}] xGA: {awayStats.xGA}</div>
             </div>
         </div>
     );

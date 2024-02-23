@@ -11,9 +11,9 @@ function App() {
             .then(data => {
                 const transformedData = data.map(fixture => ({
                     homeTeam: fixture[1],
-                    awayTeam: fixture[4],
-                    homeStats: { xG: fixture[2], xGA: fixture[3] },
-                    awayStats: { xG: fixture[5], xGA: fixture[6] }
+                    awayTeam: fixture[6],
+                    homeStats: { xG: fixture[2], xGA: fixture[3], xGRank: fixture[4], xGARank: fixture[5] },
+                    awayStats: { xG: fixture[7], xGA: fixture[8], xGRank: fixture[9], xGARank: fixture[10] }
                 }));
                 setFixtures(transformedData);
             })
