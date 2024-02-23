@@ -12,8 +12,8 @@ function App() {
                 const transformedData = data.map(fixture => ({
                     homeTeam: fixture[1],
                     awayTeam: fixture[6],
-                    homeStats: { xG: fixture[2], xGA: fixture[3], xGRank: fixture[4], xGARank: fixture[5] },
-                    awayStats: { xG: fixture[7], xGA: fixture[8], xGRank: fixture[9], xGARank: fixture[10] }
+                    homeStats: { xG: Number(fixture[2]).toFixed(1), xGA: Number(fixture[3]).toFixed(1), xGRank: fixture[4], xGARank: fixture[5] },
+                    awayStats: { xG: Number(fixture[7]).toFixed(1), xGA: Number(fixture[8]).toFixed(1), xGRank: fixture[9], xGARank: fixture[10] }
                 }));
                 setFixtures(transformedData);
             })

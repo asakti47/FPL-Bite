@@ -18,36 +18,30 @@ const Fixture = ({ homeTeam, awayTeam, homeStats, awayStats }) => {
         if (rank <= 8) return 'xga-bottom2';   // Second lowest xGA fifth
         if (rank <= 12) return 'xga-mid';   // Middle xGA fifth
         if (rank <= 16) return 'xga-top2';// Second highest xGA fifth
-        return 'xga-top';                // Highest xGA fifth fifth
+        return 'xga-top';                // Highest xGA fifth
     };
 
     return (
         <div className="fixture">
-            <div className="team-stats home-stats">
-                <div className= "combined-stat-box">
-                    <div className={`rank-box ${getXgClass(homeStats.xGRank)}`}>{homeStats.xGRank}</div>
-                    <div className="stat-box">xG: {homeStats.xG}</div>
+
+            <div className="home-team-container">
+                <div className="team-stats home-team-stats">
+                    <div className={`stat-box ${getXgClass(homeStats.xGRank)}`}>xG: {homeStats.xG}</div>
+                    <div className={`stat-box ${getXgClass(homeStats.xGARank)}`}>xGA: {homeStats.xGA}</div>
                 </div>
-                <div className= "combined-stat-box">
-                    <div className={`rank-box ${getXgaClass(homeStats.xGARank)}`}>{homeStats.xGARank}</div>
-                    <div className="stat-box">xGA: {homeStats.xGA}</div>
-                </div>
+
+                <span className="team-name home-team-name">{homeTeam}</span>
+                <img src={teamLogos[homeTeam]} alt={`${homeTeam} logo`} className="team-logo home-team-logo" />
             </div>
             
-            <span className="team-name">{homeTeam}</span>
-            <img src={teamLogos[homeTeam]} alt={`${homeTeam} logo`} className="team-logo" />
             <span className="vs">vs</span>
-            <img src={teamLogos[awayTeam]} alt={`${awayTeam} logo`} className="team-logo away-team-logo" />
-            <span className="team-name">{awayTeam}</span>
-            
-            <div className="team-stats away-stats">
-                <div className="combined-stat-box">
-                    <div className={`rank-box ${getXgClass(awayStats.xGRank)}`}>{awayStats.xGRank}</div>
-                    <div className="stat-box">xG: {awayStats.xG}</div>
-                </div>
-                <div className="combined-stat-box">
-                    <div className={`rank-box ${getXgaClass(awayStats.xGARank)}`}>{awayStats.xGARank}</div>
-                    <div className="stat-box">xGA: {awayStats.xGA}</div>
+
+            <div className="away-team-container">
+                <img src={teamLogos[awayTeam]} alt={`${awayTeam} logo`} className="team-logo away-team-logo" />
+                <span className="team-name away-team-name">{awayTeam}</span>
+                <div className="team-stats away-team-stats">
+                    <div className={`stat-box ${getXgaClass(awayStats.xGRank)}`}>xG: {awayStats.xG}</div>
+                    <div className={`stat-box ${getXgaClass(awayStats.xGARank)}`}>xGA: {awayStats.xGA}</div>
                 </div>
             </div>
         </div>

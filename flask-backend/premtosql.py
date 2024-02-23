@@ -59,6 +59,10 @@ def fetch_fbref_team_stats():
         # Map the team ID to the corresponding column in the PL Team Stats DataFrame
         df['id'] = df['Squad'].map(id_dict)
         df = df[['id','Squad', 'xG', 'xGA']]
+
+        # Ensure xG and xGA are all in float
+        df['xG'] = df['xG'].round(1).astype(float)
+        df['xGA'] = df['xGA'].round(1).astype(float)
         return df
     
     except Exception as e:
@@ -107,7 +111,7 @@ def rank_team_stats(df):
     # Note: The ranking might produce floats, so ensure there are no NaN values before conversion to avoid errors
     df['xGRank'] = df['xGRank'].fillna(0).astype(int)
     df['xGARank'] = df['xGARank'].fillna(0).astype(int)
-    
+
     return df
 
 def fetch_and_process_data():

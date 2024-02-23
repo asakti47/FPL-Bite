@@ -13,12 +13,15 @@
 .xga-top2{ background-color: rgb(255, 23, 81); color: white; font-weight: bold;}
 .xga-top { background-color: rgb(128, 7, 45); color: white; font-weight: bold; } /* Maroon */
 
+/* ------------------------------------------------------------------------------------------------*/
+
+/* Fixture Container & Items */
 .fixture {
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 20px auto;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
     width: 90%; /* Adjust based on overall layout needs */
@@ -27,30 +30,52 @@
     max-width: 1200px; /* Ensures fixtures are not too wide */
 }
 
-.team-stats, .team-logo, .vs, .team-name {
-    display: flex;
+.vs {
+    margin: 0 20px; /* Fixed margin for consistent alignment */
+    flex-shrink: 0; /* Prevents the 'vs' from shrinking */
+    width: 50px; /* Fixed width to help align 'vs' across fixtures */
+    text-align: center; /* Ensures 'vs' is always centered in its box */
+    font-weight: bold;
     justify-content: center;
-    align-items: center;
 }
 
-.team-stats {
-    width: 100px; /* Fixed width for stats to ensure alignment */
+/* ------------------------------------------------------------------------------------------------*/
+
+/* Home Team Items */ 
+.home-team-container {
     display: flex;
-    flex-direction: column;
-    text-align: center; /* Center-align the stats text */
-    margin-right: 10px; /* Space between stats and team name/logo */
+    align-items: center;
+    justify-content: flex-end; /* Align items to the start of the container */
+    width: 40%; /* Use 100% width to utilize full container space */
 }
 
-.stat-box {
-    display: flex; /* Align rank box and stat value horizontally */
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
-    margin: 2px 0; /* Small gap between stats */
-    border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
-    width: auto; /* Adjust width as needed */
-    background-color: inherit; /* Use the background color from the class for xG or xGA */
+.team-logo.home-team-logo {
+    margin-left: 10px;
 }
+
+.team-stats.home-team-stats {
+    margin-right: 20px; /* Spacing to the right, slightly away from the team name */
+}
+/* ------------------------------------------------------------------------------------------------*/
+
+/* Away Team Items */
+.away-team-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start of the container */
+    width: 40%; /* Use 100% width to utilize full container space */
+}
+
+.team-logo.away-team-logo {
+    margin-right: 10px;
+}
+
+.team-stats.away-team-stats {
+    margin-left: 20px; /* Spacing to the left, slightly away from the team name */
+}
+/* ------------------------------------------------------------------------------------------------*/
+
+/* General Team Descriptive Items */
 
 .team-logo {
     width: 50px; /* Fixed width and height to prevent distortion */
@@ -59,35 +84,31 @@
 }
 
 .team-name {
-    margin: 0 15px; /* Adjust spacing as needed */
-    white-space: nowrap; /* Prevents team names from wrapping */
+    white-space: nowrap; /* Keeps the name on a single line */
     font-weight: bold;
+    flex-grow: 0; 
+    width: 100px;
 }
 
-.vs {
-    margin: 0 20px; /* Fixed margin for consistent alignment */
-    flex-shrink: 0; /* Prevents the 'vs' from shrinking */
-    width: 50px; /* Fixed width to help align 'vs' across fixtures */
-    text-align: center; /* Ensures 'vs' is always centered in its box */
-    font-weight: bold;
+/* ------------------------------------------------------------------------------------------------*/
+
+/* Stats Items */
+
+.team-stats {
+    width: 100px; /* Example fixed width; adjust based on your content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.rank-box {
+.stat-box {
+    display: inline;
     padding: 4px;
+    margin: 2px 0; /* Small gap between stats */
+    width: 80px; /* Adjust width as needed */
     border: 2px solid rgb(173, 166, 166);
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 2px; /* Small gap between rank box and stat box */
-}
-
-/* Combined box styling (wrapper for rank box and stat box) */
-.combined-stat-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgb(173, 166, 166);
-    background-color: #e3e3e3; /* Default background, mostly overridden by specific colors */
     border-radius: 4px; /* Ensure the combined box is rounded */
 }
+
+/* ------------------------------------------------------------------------------------------------*/
+
