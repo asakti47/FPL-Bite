@@ -1,3 +1,18 @@
+/* CONSTANTS */
+/* Color coding for xG */
+.xg-top{ background-color: rgb(55, 85, 35); color: white; font-weight: bold;}
+.xg-top2 { background-color: rgb(1, 252, 122); color: black; font-weight: bold;} /* Green */
+.xg-mid { background-color: rgb(231, 231, 231); color: black; font-weight: bold; } /* Grey */
+.xg-bottom2{ background-color: rgb(255, 23, 81); color: white; font-weight: bold;}
+.xg-bottom { background-color: rgb(128, 7, 45); color: white; font-weight: bold;} /* Maroon */
+
+/* Color coding for xGA */
+.xga-bottom{ background-color: rgb(55, 85, 35); color: white; font-weight: bold;}
+.xga-bottom2 { background-color: rgb(1, 252, 122); color: black; font-weight: bold;} /* Green */
+.xga-mid { background-color: rgb(231, 231, 231); color: black; font-weight: bold;} /* Grey */
+.xga-top2{ background-color: rgb(255, 23, 81); color: white; font-weight: bold;}
+.xga-top { background-color: rgb(128, 7, 45); color: white; font-weight: bold; } /* Maroon */
+
 .fixture {
     display: flex;
     align-items: center;
@@ -27,13 +42,14 @@
 }
 
 .stat-box {
-    width: 100%; /* Full width of the stats container */
-    padding: 4px;
-    background-color: #e3e3e3;
-    border-radius: 4px;
-    margin: 2px 0; /* Small gap between stats */
-    display: flex;
+    display: flex; /* Align rank box and stat value horizontally */
+    align-items: center;
     justify-content: center;
+    padding: 4px;
+    margin: 2px 0; /* Small gap between stats */
+    border-radius: 0 4px 4px 0; /* Rounded corners on the right side */
+    width: auto; /* Adjust width as needed */
+    background-color: inherit; /* Use the background color from the class for xG or xGA */
 }
 
 .team-logo {
@@ -54,4 +70,24 @@
     width: 50px; /* Fixed width to help align 'vs' across fixtures */
     text-align: center; /* Ensures 'vs' is always centered in its box */
     font-weight: bold;
+}
+
+.rank-box {
+    padding: 4px;
+    border: 2px solid rgb(173, 166, 166);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2px; /* Small gap between rank box and stat box */
+}
+
+/* Combined box styling (wrapper for rank box and stat box) */
+.combined-stat-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(173, 166, 166);
+    background-color: #e3e3e3; /* Default background, mostly overridden by specific colors */
+    border-radius: 4px; /* Ensure the combined box is rounded */
 }
